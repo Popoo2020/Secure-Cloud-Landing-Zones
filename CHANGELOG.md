@@ -9,5 +9,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - GitHub Actions CI workflow
 - Normalized Unicode dashes in documentation
--M inimal smoke tests to improve CI stability
+-M  inimal smoke tests to improve CI stability
 
