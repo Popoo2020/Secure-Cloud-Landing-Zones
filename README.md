@@ -1,31 +1,61 @@
-# Secure-Cloud-Landing-Zones
+# Secure‑Cloud‑Landing‑Zones
 
-## Overview
-This repository provides secure landing zones for Azure and AWS environments. It includes opinionated baselines for identity management, network segmentation, logging, monitoring, and compliance controls. The goal is to help organisations deploy scalable, secure-by-default cloud foundations aligned to ISO 27001 and other frameworks.
+[![CI](https://github.com/your-org/Secure-Cloud-Landing-Zones/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/Secure-Cloud-Landing-Zones/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+**Secure‑Cloud‑Landing‑Zones** provides guidance and reference artefacts for
+designing and deploying secure landing zones across public cloud providers.
+Landing zones are opinionated configurations that establish foundational
+identity, networking, logging and governance patterns to support
+enterprise‑scale workloads.  This project focuses on high‑level
+documentation rather than deployable templates, emphasising principles over
+implementation specifics.
 
 ## Features
-- **Identity baselines**: sample configurations for Azure Entra ID and AWS IAM, including role-based access control, conditional access policies, MFA enforcement and privileged identity management.
-- **Network segmentation**: reference network topologies with hub/spoke patterns, network security groups (NSGs), route tables, and VPC/VNet peering guidelines.
-- **Logging & monitoring**: templates for enabling platform logging (Azure Activity Log, AWS CloudTrail), threat detection services (Microsoft Sentinel, AWS GuardDuty), and centralised log analytics.
-- **Compliance controls**: mapping of landing zone components to ISO/IEC 27001 controls, with evidence suggestions and audit checklists.
-- **Documentation & diagrams**: architecture diagrams and design decision records to accelerate implementation.
 
-## Repository Structure
-- `azure/` – baseline configurations and scripts for Azure landing zones.
-- `aws/` – baseline configurations and scripts for AWS landing zones.
-- `docs/` – high-level architecture diagrams, threat models and design documents.
-- `.github/workflows/` – CI workflows for linting and validating templates.
+* **Identity baseline (Azure):** `docs/azure_identity_baseline.md` describes
+  recommended patterns for Azure Entra ID, including privilege separation,
+  privileged identity management (PIM) and conditional access policies.
+* **Control objectives:** The `docs/control_objectives.md` document maps
+  landing zone components (identity, network, logging, key management) to
+  generic control objectives.  This helps stakeholders understand how
+  recommendations support compliance and security goals.
+* **Network & logging guidance:** Planned documents will cover network
+  segmentation strategies (e.g. NSGs, VPC segmentation) and logging
+  baselines to ensure critical audit trails are captured.
+* **Key management & break‑glass accounts:** Future additions will address
+  encryption key lifecycle management and emergency access procedures.
 
-## Getting Started
-1. Review the architecture and design decisions in `docs/`.
-2. For Azure: customise the parameters in `azure/` before deploying via ARM/Bicep/Terraform.
-3. For AWS: review the IAM and VPC templates in `aws/` and adjust to your organisation’s naming standards.
-4. Use the compliance matrix in `docs/compliance-mapping.md` to map each component to the relevant control.
+## Quickstart
 
-## Contributing
-Contributions are welcome! Please open issues or pull requests for improvements. See `SECURITY.md` for vulnerability reporting procedures and `LICENSE` for terms.
+This repository is documentation‑only at this stage.  To make use of it:
 
-## License
-Licensed under the Apache 2.0 License.
+1. Read `docs/azure_identity_baseline.md` to understand the foundational
+   identity patterns and conditional access examples.
+2. Review `docs/control_objectives.md` to map your organisation’s
+   compliance requirements to landing zone design decisions.
+3. Adapt the recommendations to your environment.  For example, implement
+   conditional access policies in Azure Entra and define least‑privilege
+   roles in AWS IAM.
+4. Contribute back by opening issues or pull requests with additional
+   documentation, such as baseline architecture diagrams or checklists for
+   other cloud providers.
 
+## Roadmap
 
+1. Add network segmentation reference documents for Azure and AWS.
+2. Provide logging baseline guidance for capturing critical events.
+3. Create key management baseline documentation for Key Vault and KMS
+   services.
+4. Draft break‑glass account policies and procedures.
+5. Develop diagrams illustrating common landing zone topologies.
+
+For contribution guidelines, please see `CONTRIBUTING.md`.
+
+## Known Limitations
+
+This project is documentation‑focused; it does not provide Terraform
+modules or scripts to deploy landing zones.  The guidance may not be
+comprehensive or applicable to all cloud providers or industries.  Readers
+should adapt the recommendations to their own context and consult cloud
+provider documentation for detailed implementation steps.
