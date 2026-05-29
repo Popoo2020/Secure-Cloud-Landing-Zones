@@ -1,61 +1,48 @@
-# Secure‑Cloud‑Landing‑Zones
+# Secure-Cloud-Landing-Zones
 
-[![CI](https://github.com/your-org/Secure-Cloud-Landing-Zones/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/Secure-Cloud-Landing-Zones/actions/workflows/ci.yml)
+[![CI](https://github.com/Popoo2020/Secure-Cloud-Landing-Zones/actions/workflows/ci.yml/badge.svg)](https://github.com/Popoo2020/Secure-Cloud-Landing-Zones/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Secure‑Cloud‑Landing‑Zones** provides guidance and reference artefacts for
-designing and deploying secure landing zones across public cloud providers.
-Landing zones are opinionated configurations that establish foundational
-identity, networking, logging and governance patterns to support
-enterprise‑scale workloads.  This project focuses on high‑level
-documentation rather than deployable templates, emphasising principles over
-implementation specifics.
+**Secure-Cloud-Landing-Zones** provides guidance and reference artefacts for designing secure landing-zone foundations across public cloud providers.
+
+The project focuses on high-level security architecture and governance patterns for identity, networking, logging and control objectives. It is currently a documentation-focused portfolio baseline rather than a deployable Terraform or cloud-template package.
+
+> **Status:** documentation-focused cloud-security reference baseline.
 
 ## Features
 
-* **Identity baseline (Azure):** `docs/azure_identity_baseline.md` describes
-  recommended patterns for Azure Entra ID, including privilege separation,
-  privileged identity management (PIM) and conditional access policies.
-* **Control objectives:** The `docs/control_objectives.md` document maps
-  landing zone components (identity, network, logging, key management) to
-  generic control objectives.  This helps stakeholders understand how
-  recommendations support compliance and security goals.
-* **Network & logging guidance:** Planned documents will cover network
-  segmentation strategies (e.g. NSGs, VPC segmentation) and logging
-  baselines to ensure critical audit trails are captured.
-* **Key management & break‑glass accounts:** Future additions will address
-  encryption key lifecycle management and emergency access procedures.
+- **Identity baseline for Azure:** `docs/azure_identity_baseline.md` describes recommended Entra ID patterns including privilege separation, privileged identity management concepts and conditional access policy ideas.
+- **Control objectives:** `docs/control_objectives.md` maps landing-zone components such as identity, network, logging and key management to generic security-control objectives.
+- **Governance-first design:** the repository emphasises reviewable architecture principles over unverified deployment automation.
+
+## Current repository scope
+
+```text
+docs/
+  azure_identity_baseline.md
+  control_objectives.md
+
+.github/workflows/
+  ci.yml
+```
 
 ## Quickstart
 
-This repository is documentation‑only at this stage.  To make use of it:
-
-1. Read `docs/azure_identity_baseline.md` to understand the foundational
-   identity patterns and conditional access examples.
-2. Review `docs/control_objectives.md` to map your organisation’s
-   compliance requirements to landing zone design decisions.
-3. Adapt the recommendations to your environment.  For example, implement
-   conditional access policies in Azure Entra and define least‑privilege
-   roles in AWS IAM.
-4. Contribute back by opening issues or pull requests with additional
-   documentation, such as baseline architecture diagrams or checklists for
-   other cloud providers.
+1. Read `docs/azure_identity_baseline.md` to understand foundational identity patterns.
+2. Review `docs/control_objectives.md` to connect landing-zone design decisions to security and compliance goals.
+3. Adapt the recommendations to your environment before implementation.
 
 ## Roadmap
 
-1. Add network segmentation reference documents for Azure and AWS.
-2. Provide logging baseline guidance for capturing critical events.
-3. Create key management baseline documentation for Key Vault and KMS
-   services.
-4. Draft break‑glass account policies and procedures.
-5. Develop diagrams illustrating common landing zone topologies.
+1. Add network segmentation reference notes for Azure and AWS.
+2. Add logging baseline guidance for capturing critical security events.
+3. Add key-management and break-glass-account guidance.
+4. Add diagrams for common landing-zone topologies.
+5. Add optional validation checks for documentation consistency.
 
-For contribution guidelines, please see `CONTRIBUTING.md`.
+## Known limitations
 
-## Known Limitations
-
-This project is documentation‑focused; it does not provide Terraform
-modules or scripts to deploy landing zones.  The guidance may not be
-comprehensive or applicable to all cloud providers or industries.  Readers
-should adapt the recommendations to their own context and consult cloud
-provider documentation for detailed implementation steps.
+- This project is documentation-focused.
+- It does not currently provide deployable Terraform modules or scripts.
+- The guidance is not a substitute for environment-specific cloud architecture review.
+- Recommendations should be adapted to each organisation's risk profile, regulatory requirements and cloud-provider documentation.
