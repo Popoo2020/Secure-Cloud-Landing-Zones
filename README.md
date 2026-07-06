@@ -12,15 +12,14 @@ The project focuses on high-level security architecture and governance patterns 
 ## Features
 
 - **Identity baseline for Azure:** `docs/azure_identity_baseline.md` describes recommended Entra ID patterns including privilege separation, privileged identity management concepts and conditional access policy ideas.
-- **Control objectives:** `docs/control_objectives.md` maps landing-zone components such as identity, network, logging and key management to generic security-control objectives.
 - **Governance-first design:** the repository emphasises reviewable architecture principles over unverified deployment automation.
+- **Future control objectives:** broader landing-zone control objectives are listed in the roadmap and should be added as the documentation set expands.
 
 ## Current repository scope
 
 ```text
 docs/
   azure_identity_baseline.md
-  control_objectives.md
 
 .github/workflows/
   ci.yml
@@ -29,16 +28,17 @@ docs/
 ## Quickstart
 
 1. Read `docs/azure_identity_baseline.md` to understand foundational identity patterns.
-2. Review `docs/control_objectives.md` to connect landing-zone design decisions to security and compliance goals.
-3. Adapt the recommendations to your environment before implementation.
+2. Adapt the recommendations to your environment before implementation.
+3. Use the roadmap below to guide future documentation expansion.
 
 ## Roadmap
 
-1. Add network segmentation reference notes for Azure and AWS.
-2. Add logging baseline guidance for capturing critical security events.
-3. Add key-management and break-glass-account guidance.
-4. Add diagrams for common landing-zone topologies.
-5. Add optional validation checks for documentation consistency.
+1. Add broader control-objective notes for identity, network, logging and key-management themes.
+2. Add network segmentation reference notes for Azure and AWS.
+3. Add logging baseline guidance for capturing critical security events.
+4. Add key-management and break-glass-account guidance.
+5. Add diagrams for common landing-zone topologies.
+6. Add optional validation checks for documentation consistency.
 
 ## Known limitations
 
