@@ -26,14 +26,16 @@ jobs:
           if [ -f requirements.txt ]; then
             python -m pip install -r requirements.txt
           fi
-          if [ -d tests ]; then
+          if find tests -type f \( -name 'test_*.py' -o -name '*_test.py' \) 2>/dev/null | grep -q .; then
             python -m pip install pytest
+          else
+            echo "No Python test files found; skipping pytest installation."
           fi
 
       - name: Run tests when present
         run: |
-          if [ -d tests ]; then
+          if find tests -type f \( -name 'test_*.py' -o -name '*_test.py' \) 2>/dev/null | grep -q .; then
             python -m pytest -q
           else
-            echo "No tests directory found; documentation-only repository."
+            echo "No Python test files found; documentation-only repository."
           fi
